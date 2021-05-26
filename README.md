@@ -1,4 +1,4 @@
 # Project7
-Unity Game <br>
+Small Unity Game <br>
 WIP
 
