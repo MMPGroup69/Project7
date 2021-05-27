@@ -1,7 +1,6 @@
-# Project7
 <br />
 <p align="center">
-  <h3 align="center">Project7</h3>
+  <h3 align="center">#Project7</h3>
 
   <p align="center">
   a small game by MPPGroup69
