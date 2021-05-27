@@ -4,7 +4,7 @@
   <h3 align="center">Project7</h3>
 
   <p align="center">
-    make.believe
+  a small game by MPPGroup69
    
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
