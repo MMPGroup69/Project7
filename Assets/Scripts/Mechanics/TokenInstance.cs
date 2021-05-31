@@ -43,6 +43,9 @@ namespace Platformer.Mechanics
             //only exectue OnPlayerEnter if the player collides with this token.
             var player = other.gameObject.GetComponent<PlayerController>();
             if (player != null) OnPlayerEnter(player);
+            HUD.currentCoins += 1;
+            //TODO DEBUG mutiple coin collect
+            Debug.Log("arrrrr");
         }
 
         void OnPlayerEnter(PlayerController player)

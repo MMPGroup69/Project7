@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1021066095820783695}
   - component: {fileID: 6194169784054939547}
   m_Layer: 5
-  m_Name: time
+  m_Name: Time
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 6207645960140694259}
   - component: {fileID: 7763418865454829884}
   m_Layer: 5
-  m_Name: coin
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 5118311534037993891}
   - component: {fileID: 4010420681034354411}
   m_Layer: 5
-  m_Name: coinCounter
+  m_Name: CoinCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 5735527251738260324}
   - component: {fileID: 7442483370869792471}
   m_Layer: 5
-  m_Name: healthCounter
+  m_Name: HealthCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 6624353032972242704}
   - component: {fileID: 3848357994692588088}
   m_Layer: 5
-  m_Name: health
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 9220139403692300176}
   - component: {fileID: 3705920309666185988}
   m_Layer: 5
-  m_Name: timeCounter
+  m_Name: TimeCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -814,7 +814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2923274250956292681}
   m_Layer: 0
-  m_Name: healthandcoin
+  m_Name: HealthAndCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
