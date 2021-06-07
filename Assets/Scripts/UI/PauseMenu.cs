@@ -17,10 +17,12 @@ public class PauseMenu : MonoBehaviour
             if (GameIsPaused)
             {
                 Resume();
+                Debug.Log("RESUME");
             }
             else
             {
                 Pause();
+                Debug.Log("PAUSE");
             }
         }
     }
@@ -38,7 +40,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
 
-        Debug.Log("RESUME");
+       
     }
 
     public void LoadMMenu()
