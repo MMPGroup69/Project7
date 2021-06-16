@@ -22,6 +22,7 @@ public class HUD : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI lifeText;
     [SerializeField] TextMeshProUGUI coinText;
+    [SerializeField] TextMeshProUGUI keyText;
     [SerializeField] TextMeshProUGUI countdownText;
   
     void Start()
@@ -36,6 +37,7 @@ public class HUD : MonoBehaviour
     {
         lifeText.text = currentLifes.ToString();
         coinText.text = currentCoins.ToString();
+        keyText.text = currentKeys.ToString();
         currentTime -= 1 * Time.deltaTime;
         countdownText.text = currentTime.ToString("0");
 
@@ -49,7 +51,7 @@ public class HUD : MonoBehaviour
             //load GAME OVER scene
             SceneManager.LoadScene(2);
         }
-        else if (currentCoins >= 100)
+        else if (currentCoins >= 10)
         {
             currentCoins = 0;
             currentLifes += 1;
