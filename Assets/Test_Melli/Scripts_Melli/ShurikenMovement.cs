@@ -22,12 +22,12 @@ public class ShurikenMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //wenn der Spieler ein Shuriken trifft, wird es zerstört
         //nach einer gewissen Zeit oder einer gewissen Distanz sollen die Objekte standardmäßig zerstört werden
         frames--;
-        if (frames <= 0)
+        if (frames <= 0 || destroyed == true)
         {
             Destroy(gameObject);
-            frames = 6000;
         }
     }
 
@@ -35,7 +35,7 @@ public class ShurikenMovement : MonoBehaviour
     {
         //wenn der Spieler getroffen wird, soll dessen Leben reduziert werden
 
-        Destroy(gameObject);    //bei Kollision soll das Objekt zerstört werden
+        Destroy(gameObject);    //bei Kollision soll das Objekt zerstört werden; Es muss noch überprüft werden dass es sich nicht um eine Münze oder Schlüssel handelt!!!
     }
 
 }

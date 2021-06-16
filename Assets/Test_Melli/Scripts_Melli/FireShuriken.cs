@@ -49,4 +49,5 @@ public class FireShuriken : MonoBehaviour
             frames--;   //dekrementiert frames solange sie größer 0 sind, bei 0 wird dann wieder gefeuert
         }
     }
+
 }

@@ -8,6 +8,7 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public LayerMask shurikenLayers; //Ergänzung für Shuriken - Melli
 
     public int attackDamage = 50;
     void Update()
@@ -32,6 +33,16 @@ public class PlayerCombat : MonoBehaviour
         {
            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
+
+
+        //Ergänzung Shuriken - Melli
+        Collider2D[] hitShuriken = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, shurikenLayers);
+
+        foreach (Collider2D shuriken in hitShuriken)
+        {
+            shuriken.GetComponent<ShurikenMovement>().destroyed = true; //destroyed wird bei getroffenen Shuriken auf true gesetzt, Rest passiert in ShurikenMovement
+        }
+
      }
 
      void OnDrawGizmosSelected()
