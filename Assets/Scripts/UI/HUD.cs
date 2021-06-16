@@ -15,7 +15,10 @@ public class HUD : MonoBehaviour
     int startingLifes = 1;
 
     public static int currentCoins = 0;
-    int statingCoins = 0;
+    int startingCoins = 0;
+
+    public static int currentKeys = 0;
+    int startingKeys = 0;
 
     [SerializeField] TextMeshProUGUI lifeText;
     [SerializeField] TextMeshProUGUI coinText;
@@ -24,8 +27,9 @@ public class HUD : MonoBehaviour
     void Start()
     {
         currentLifes = startingLifes;
-        currentCoins = statingCoins;
+        currentCoins = startingCoins;
         currentTime = startingTime;
+        currentKeys = startingKeys;
     }
 
     void Update()
@@ -49,6 +53,10 @@ public class HUD : MonoBehaviour
         {
             currentCoins = 0;
             currentLifes += 1;
+        }
+        else if (currentKeys >=3) {
+
+            Debug.Log("arrrrr3");
         }
     }
 }
