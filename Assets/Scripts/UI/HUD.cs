@@ -7,7 +7,11 @@ using UnityEngine.SceneManagement;
 
 
 public class HUD : MonoBehaviour
+
 {
+
+    public GameObject door;
+
     float currentTime = 0f;
     float startingTime = 300f;
 
@@ -59,6 +63,7 @@ public class HUD : MonoBehaviour
         else if (currentKeys >=3) {
 
             Debug.Log("arrrrr3");
+            Destroy(door);
         }
     }
 }

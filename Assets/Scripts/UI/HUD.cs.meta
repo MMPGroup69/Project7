@@ -3,7 +3,12 @@ guid: dfa9d9fc0d443c14bb7bb873b137f589
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - door: {instanceID: 0}
+  - lifeText: {instanceID: 0}
+  - coinText: {instanceID: 0}
+  - keyText: {instanceID: 0}
+  - countdownText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

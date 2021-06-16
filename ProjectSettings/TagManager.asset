@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Coin
   - Shuriken
+  - DEATH
   layers:
   - Default
   - TransparentFX
