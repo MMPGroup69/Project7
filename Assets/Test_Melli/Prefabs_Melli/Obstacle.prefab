@@ -133,6 +133,8 @@ MonoBehaviour:
   firePoint3: {fileID: 9214045108982913780}
   shurikenPrefab: {fileID: 4880021094812813069, guid: 261f961cfaf865047a448a539cabcb59,
     type: 3}
+  player: {fileID: 4520396350849616, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
+  obstacle: {fileID: 7613475146902359486}
 --- !u!1 &5543455432137373497
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class FireShuriken : MonoBehaviour
     private System.Random random = new System.Random();
     private int frames = 0;
     private int cases = 0;
-    
+
 
     // Start is called before the first frame update
     void Start()

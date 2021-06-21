@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2668839490208958763}
   - component: {fileID: 3392997808502502414}
   - component: {fileID: 7530793165036120074}
+  - component: {fileID: 6372540885894869603}
   m_Layer: 9
   m_Name: Shuriken
   m_TagString: Shuriken
@@ -120,6 +121,9 @@ MonoBehaviour:
   speed: 3
   rb: {fileID: 3392997808502502414}
   destroyed: 0
+  player: {fileID: 4520396350849616, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
+  obstacle: {fileID: 7613475146902359486, guid: a103a5b65fc4f5a45871d46409e2ef08,
+    type: 3}
 --- !u!50 &3392997808502502414
 Rigidbody2D:
   serializedVersion: 4
@@ -148,7 +152,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4880021094812813069}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -167,3 +171,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.28178924, y: 0.2671885}
   m_EdgeRadius: 0
+--- !u!58 &6372540885894869603
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880021094812813069}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.13
