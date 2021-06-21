@@ -121,9 +121,6 @@ MonoBehaviour:
   speed: 3
   rb: {fileID: 3392997808502502414}
   destroyed: 0
-  player: {fileID: 4520396350849616, guid: 7d60c822c3f1b408ea7a00ecdb5e047a, type: 3}
-  obstacle: {fileID: 7613475146902359486, guid: a103a5b65fc4f5a45871d46409e2ef08,
-    type: 3}
 --- !u!50 &3392997808502502414
 Rigidbody2D:
   serializedVersion: 4
@@ -178,12 +175,12 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4880021094812813069}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.13
+  m_Radius: 0.11

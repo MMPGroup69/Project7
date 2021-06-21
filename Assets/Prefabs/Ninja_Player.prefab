@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 6069225684259841821}
   - component: {fileID: 6069225684259841810}
   - component: {fileID: 6069225684259841811}
+  - component: {fileID: -5400016439821020279}
+  - component: {fileID: -3083316383626872440}
   m_Layer: 7
   m_Name: Ninja_Player
   m_TagString: Player
@@ -107,7 +109,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 2
   m_SleepingMode: 0
@@ -255,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6069225684259841810}
   attackPoint: {fileID: 6069225684345636125}
-  attackRange: 1
+  attackRange: 2
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
@@ -263,6 +265,35 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   attackDamage: 50
+--- !u!114 &-5400016439821020279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069225684259841818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6574c6516752645d1af6d1fd42a7e47e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamewon:
+    m_Handle: 0
+--- !u!114 &-3083316383626872440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069225684259841818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40d452d999b3fc419f4c9c240309884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 2
+  isAlive: 1
+  hitCounter: 0
 --- !u!1 &6069225684345636124
 GameObject:
   m_ObjectHideFlags: 0

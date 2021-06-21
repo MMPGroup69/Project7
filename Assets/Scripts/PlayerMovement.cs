@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public CharacterController2D controller; //bezieht sich auf das Skript CharacterController2D in Unity
     public Animator animator;
-    public float runSpeed = 40f;
+    public float runSpeed = 60f;
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
