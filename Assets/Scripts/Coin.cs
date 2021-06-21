@@ -18,13 +18,14 @@ public class Coin : MonoBehaviour
         
     }
 
-    //wenn der Spieler die Münzen einsammelt, verschwinden sie; Es muss überprüft werden, dass es sich auch um den Spieler handelt!!
+    //wenn der Spieler die Münzen einsammelt, verschwinden sie und der Counter erhöht sich
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        HUD.currentCoins += 1;
-        Destroy(gameObject);
-
-        //anschließend muss der Münz-Counter erhöht werden
+        if (collision.tag == "Player")
+        {
+            HUD.currentCoins += 1;
+            Destroy(gameObject);
+        }
     }
 
 }

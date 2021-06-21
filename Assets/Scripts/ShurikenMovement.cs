@@ -35,9 +35,10 @@ public class ShurikenMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //wenn der Spieler getroffen wird, soll dessen Leben reduziert werden
-
-        Destroy(gameObject);    //bei Kollision soll das Objekt zerstört werden; Es muss noch überprüft werden dass es sich nicht um eine Münze oder Schlüssel handelt!!!
+        if(collision.tag == "Player")
+        {
+            Destroy(gameObject);    //bei Kollision soll das Objekt zerstört werden; Es muss noch überprüft werden dass es sich nicht um eine Münze oder Schlüssel handelt!!!
+        }
     }
 
 }

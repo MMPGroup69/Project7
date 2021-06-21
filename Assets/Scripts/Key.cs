@@ -21,9 +21,12 @@ public class Key : MonoBehaviour
     //wenn der Spieler den Key "einsammelt" verschwindet er; Es muss überprüft werden dass es sich bei der Kollision um den Spieler handelt!!
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        HUD.currentKeys += 1;
-        Destroy(gameObject);
-        //anschließend muss der Schlüssel dem Inventar angefügt werden
+        if (collision.tag == "Player")
+        {
+            HUD.currentKeys += 1;
+            Destroy(gameObject);
+        }
+
     }
 
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public int lives = 2;
+    public int lives = 1;
     public bool isAlive = true;
     public int hitCounter = 0;
 
@@ -42,6 +42,9 @@ public class PlayerHealth : MonoBehaviour
         {
             lives--;
             hitCounter = 0;
+
+            HUD.currentLifes--;
+
         }
     }
 
