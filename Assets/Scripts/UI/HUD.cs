@@ -15,14 +15,13 @@ public class HUD : MonoBehaviour
     float currentTime = 0f;
     float startingTime = 300f;
 
-    public static int currentLifes = 0;
-    int startingLifes = 1;
+    public static int currentLives = 0;
 
     public static int currentCoins = 0;
-    int startingCoins = 0;
+    public int startingCoins = 0;
 
     public static int currentKeys = 0;
-    int startingKeys = 0;
+    public int startingKeys = 0;
 
     [SerializeField] TextMeshProUGUI lifeText;
     [SerializeField] TextMeshProUGUI coinText;
@@ -31,7 +30,7 @@ public class HUD : MonoBehaviour
   
     void Start()
     {
-        currentLifes = startingLifes;
+        currentLives = PlayerHealth.lives;
         currentCoins = startingCoins;
         currentTime = startingTime;
         currentKeys = startingKeys;
@@ -39,7 +38,7 @@ public class HUD : MonoBehaviour
 
     void Update()
     {
-        lifeText.text = currentLifes.ToString();
+        lifeText.text = PlayerHealth.lives.ToString();
         coinText.text = currentCoins.ToString();
         keyText.text = currentKeys.ToString();
         currentTime -= 1 * Time.deltaTime;
@@ -51,14 +50,14 @@ public class HUD : MonoBehaviour
             //load GAME OVER scene
             SceneManager.LoadScene(2);
         }
-        else if (currentLifes <= 0) {
+        else if (currentLives <= 0) {
             //load GAME OVER scene
             SceneManager.LoadScene(2);
         }
         else if (currentCoins >= 10)
         {
             currentCoins = 0;
-            currentLifes += 1;
+            PlayerHealth.lives += 1;
         }
         else if (currentKeys >=3) {
 

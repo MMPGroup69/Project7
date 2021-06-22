@@ -4894,6 +4894,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 2042336135}
+  startingLifes: 1
+  startingCoins: 2
+  startingKeys: 0
   lifeText: {fileID: 1149105088}
   coinText: {fileID: 41676240}
   keyText: {fileID: 971096813}
@@ -13036,6 +13039,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3083316383626872440, guid: ad3b6f253fae2c2429dc6c0a0e5fb7f9,
+        type: 3}
+      propertyPath: lives
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6069225684259841811, guid: ad3b6f253fae2c2429dc6c0a0e5fb7f9,
         type: 3}
       propertyPath: attackRange
