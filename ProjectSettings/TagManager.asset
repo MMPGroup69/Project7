@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - Shuriken
   - DEATH
+  - Falling
   layers:
   - Default
   - TransparentFX
