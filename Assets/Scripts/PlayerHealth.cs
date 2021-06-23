@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public bool isAlive = true;
     public int shurikenDmg = 1;
     public int enemyDmg = 2;
+    public int fallingDmg = 2;
 
 
     // Start is called before the first frame update
@@ -43,6 +44,12 @@ public class PlayerHealth : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             lives = lives - enemyDmg;
+        }
+
+        // Falling DMG
+        if (collision.tag == "Falling")
+        {
+            lives = lives - fallingDmg;
         }
     }
 
