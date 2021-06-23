@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public LayerMask shurikenLayers; //Ergänzung für Shuriken - Melli
+    AudioSource attack;
 
     public int attackDamage = 50;
     void Update()
@@ -22,6 +23,8 @@ public class PlayerCombat : MonoBehaviour
     
     void Attack()
      {
+        SoundManager.PlaySound("attack");
+
         //Animation der Schwertattacke
         animator.SetTrigger("Attack");
 
