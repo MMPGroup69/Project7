@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public GameObject coinPrefab;
+    bool isCollected = false;
     
     // Start is called before the first frame update
     void Start()
@@ -18,13 +19,16 @@ public class Coin : MonoBehaviour
         
     }
 
-    //wenn der Spieler die Münzen einsammelt, verschwinden sie und der Counter erhöht sich
+    //wenn der Spieler die Mï¿½nzen einsammelt, verschwinden sie und der Counter erhï¿½ht sich
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && isCollected == false)
         {
+            isCollected = true;
+            coinPrefab.GetComponent<Renderer>().enabled = false;
+            GetComponent<AudioSource>().Play();
             HUD.currentCoins += 1;
-            Destroy(gameObject);
+            Destroy(gameObject, 0.5f);
         }
     }
 
