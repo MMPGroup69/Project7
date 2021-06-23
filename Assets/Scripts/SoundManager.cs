@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip jumpSound, coinSound;
+    public static AudioClip jumpSound, coinSound, runSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
     {
         jumpSound = Resources.Load<AudioClip>("jump");
         coinSound = Resources.Load<AudioClip>("coin");
+        
         
         audioSrc = GetComponent<AudioSource>();
     }
