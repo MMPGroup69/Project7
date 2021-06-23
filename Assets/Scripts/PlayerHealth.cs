@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
         {
             isAlive = false;
             SceneManager.LoadScene("GAMEOVER");
+            lives = 5;
         }
         Debug.Log("health = " + lives);
     }
