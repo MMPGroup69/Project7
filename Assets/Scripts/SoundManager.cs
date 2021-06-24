@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip jumpSound, attackSound;
+    public static AudioClip jumpSound, attackSound, secretSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start(){
         jumpSound = Resources.Load<AudioClip>("jump");
         attackSound = Resources.Load<AudioClip>("attack");
-        
+        secretSound = Resources.Load<AudioClip>("secret");
         audioSrc = GetComponent<AudioSource>();
     }
 
@@ -31,7 +31,10 @@ public class SoundManager : MonoBehaviour
             case "attack":
                 audioSrc.PlayOneShot(attackSound);
                 break;
-            
+            case "secret":
+                audioSrc.PlayOneShot(secretSound);
+                break;
+
         }
     }
 }

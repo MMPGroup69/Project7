@@ -27,7 +27,9 @@ public class HUD : MonoBehaviour
     [SerializeField] TextMeshProUGUI coinText;
     [SerializeField] TextMeshProUGUI keyText;
     [SerializeField] TextMeshProUGUI countdownText;
-  
+
+    public bool isLocked = true;
+
     void Start()
     {
         currentLives = PlayerHealth.lives;
@@ -59,8 +61,13 @@ public class HUD : MonoBehaviour
             currentCoins = 0;
             PlayerHealth.lives += 1;
         }
-        else if (currentKeys >=3) {
-            Destroy(door);
+        else if (currentKeys >= 3) {
+            if (isLocked == true){
+                SoundManager.PlaySound("secret");
+                isLocked = false;
+                Destroy(door);
+                Debug.Log("door");
+            }
         }
     }
 }
