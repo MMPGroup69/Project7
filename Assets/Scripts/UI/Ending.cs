@@ -5,15 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
+    void Update()
+    {
+        if (Input.anyKeyDown)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);         
+        }
+    }
+
     public void LoadMMenu()
     {
         SceneManager.LoadScene("MainMenu");
-        Debug.Log("MMENU");
     }
 
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        Debug.Log("RETRY");
     }
 }
