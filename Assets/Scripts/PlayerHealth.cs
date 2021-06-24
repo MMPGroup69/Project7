@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public static int lives = 5;
+    public static int lives;
     public bool isAlive = true;
     public int shurikenDmg = 1;
     public int enemyDmg = 2;
@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        lives = 5;
     }
 
     // Update is called once per frame
@@ -27,9 +27,8 @@ public class PlayerHealth : MonoBehaviour
         {
             isAlive = false;
             SceneManager.LoadScene("GAMEOVER");
-            lives = 5;
         }
-        Debug.Log("health = " + lives);
+        //Debug.Log("health = " + lives);
     }
 
 

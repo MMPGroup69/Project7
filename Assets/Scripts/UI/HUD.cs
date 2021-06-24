@@ -60,8 +60,6 @@ public class HUD : MonoBehaviour
             PlayerHealth.lives += 1;
         }
         else if (currentKeys >=3) {
-
-            Debug.Log("arrrrr3");
             Destroy(door);
         }
     }
