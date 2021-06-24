@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public static int lives;
+    public static int lives = 5;
     public bool isAlive = true;
     public int shurikenDmg = 1;
     public int enemyDmg = 2;
