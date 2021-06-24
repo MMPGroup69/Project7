@@ -7,7 +7,7 @@ public class Ending : MonoBehaviour
 {
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);         
         }
@@ -16,10 +16,12 @@ public class Ending : MonoBehaviour
     public void LoadMMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        //Debug.Log("MMENU");
     }
 
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        //Debug.Log("RETRY");
     }
 }
