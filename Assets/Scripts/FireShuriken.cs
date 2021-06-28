@@ -11,8 +11,10 @@ public class FireShuriken : MonoBehaviour
     public Transform firePoint3;
     public GameObject shurikenPrefab;
     private System.Random random = new System.Random();
-    private int frames = 0;
     private int cases = 0;
+    private float lastShot = 0f;
+    private float currentTime;
+    private float nextShot;
 
 
     // Start is called before the first frame update
@@ -24,8 +26,11 @@ public class FireShuriken : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (frames <= 0)    //wenn der gewünschte Abstand zum letzten Feuern erreicht ist, soll erneut gefeuert werden; soll noch ergänzt werden damit es Abhängig von der Entfernung des Chara ausgelöst wird
+        currentTime = Time.time;
+
+        if (currentTime - lastShot >= nextShot)    //wenn der gewünschte Abstand zum letzten Feuern erreicht ist, soll erneut gefeuert werden
         {
+            lastShot = currentTime;
             cases = random.Next(1, 4);  //damit random von einem der drei Punkte gefeuert werden kann
             switch (cases)
             {
@@ -41,13 +46,10 @@ public class FireShuriken : MonoBehaviour
                 default:
                     break;
             }
-            frames = random.Next(2500, 7000);   //legt den Abstand zum nächsten Feuern random fest
+            //legt den Abstand zum nächsten Feuern random fest
+            nextShot = (random.Next(30, 60)) * 0.1f;
         }
 
-        if (frames > 0)
-        {
-            frames--;   //dekrementiert frames solange sie größer 0 sind, bei 0 wird dann wieder gefeuert
-        }
     }
 
 }
