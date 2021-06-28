@@ -50,12 +50,15 @@ public class HUD : MonoBehaviour
         {
             currentTime = 0;
             //load GAME OVER scene
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
-        else if (currentLives <= 0) {
+        
+        //Habe das rausgenommen weil sonst die GameOver Scene doppelt geladen wird nach dem builden; wenn ich es aus health rausnehme funktioniert es nicht mehr
+        //else if (currentLives <= 0) {
             //load GAME OVER scene
-            SceneManager.LoadScene(2);
-        }
+            //SceneManager.LoadScene(3);
+        //}
+
         else if (currentCoins >= 10)
         {
             currentCoins = 0;

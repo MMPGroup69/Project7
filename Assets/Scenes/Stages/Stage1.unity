@@ -278,7 +278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153199296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 3, z: 0}
+  m_LocalPosition: {x: -1.5, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4039,7 +4039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491343153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 3.39, z: -10}
+  m_LocalPosition: {x: -1.5, y: 3.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 974470469}
@@ -5109,6 +5109,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayerID
       value: -245516517
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009130065698333723, guid: 1d837c37d62c9a94b9b9e706873b8e88,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009130065698333723, guid: 1d837c37d62c9a94b9b9e706873b8e88,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4009130065698333723, guid: 1d837c37d62c9a94b9b9e706873b8e88,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 4009130065698333725, guid: 1d837c37d62c9a94b9b9e706873b8e88,
         type: 3}
@@ -15271,7 +15286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491700523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 3.39, z: -10}
+  m_LocalPosition: {x: -1.5, y: 3.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423169713}
@@ -15627,12 +15642,12 @@ PrefabInstance:
     - target: {fileID: 6069225684259841822, guid: ad3b6f253fae2c2429dc6c0a0e5fb7f9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6069225684259841822, guid: ad3b6f253fae2c2429dc6c0a0e5fb7f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.39
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6069225684259841822, guid: ad3b6f253fae2c2429dc6c0a0e5fb7f9,
         type: 3}
