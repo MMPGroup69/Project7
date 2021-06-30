@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         if(Input.GetButtonDown("Crouch")){
+            SoundManager.PlaySound("crouch");
             crouch = true;
         } else if (Input.GetButtonUp("Crouch")){
             crouch = false;
@@ -48,6 +49,8 @@ public class PlayerMovement : MonoBehaviour {
      
      public void OnCrouching(bool isCrouching){
         animator.SetBool("IsCrouching", isCrouching);
+        
+
     }
 
     public void Step (){
@@ -60,4 +63,6 @@ public class PlayerMovement : MonoBehaviour {
         jump = false;
 
     }
+
+   
 }

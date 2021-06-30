@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-
+    public Animator animator; // für Verletzung - Aylin
     public static int lives = 5;
     public bool isAlive = true;
     public int shurikenDmg = 1;
@@ -38,12 +38,16 @@ public class PlayerHealth : MonoBehaviour
         if (collision.tag == "Shuriken")
         {
             lives = lives - shurikenDmg;
+            SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab - Aylin 
+            animator.SetTrigger("Hurt");    //Spiele Hurt Animation ab
         }
 
         // Enemy DMG
         if (collision.tag == "Enemy")
         {
             lives = lives - enemyDmg;
+            SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab - Aylin 
+            animator.SetTrigger("Hurt");    //Spiele Hurt Animation ab
         }
 
         // Falling DMG
