@@ -6,12 +6,39 @@ public class Enemy : MonoBehaviour
 {
     public Animator animator;
 
-    public int maxHealth = 100;
+    [SerializeField] float moveSpeed = 1f;
+
+    Rigidbody2D rb;
+
+    public int maxHealth = 60;
     int currentHealth;
     // Start is called before the first frame update
+
     void Start()
     {
         currentHealth = maxHealth;
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+     void Update()
+    {
+        if (IsFacingRight()){
+            //Move right
+            rb.velocity = new Vector2(moveSpeed, 0f);
+
+        }else{
+            //Move left
+            rb.velocity = new Vector2(-moveSpeed, 0f);
+            
+        }
+    }
+     private void OnTriggerExit2D(Collider2D collision){
+        //Turn
+        transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+    }
+
+    private bool IsFacingRight(){
+        return transform.localScale.x > 0; //0.0001f
     }
 
     public void TakeDamage(int damage)
@@ -31,11 +58,16 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Enemy died");
 
+        rb.velocity = new Vector2(0f, 0f);
+
         //Animation vom Sterben
         animator.SetBool("IsDead", true);
 
         //Disable Enemy
-        GetComponent<Collider2D>().enabled = false;
+        foreach(BoxCollider2D c in GetComponentsInChildren<BoxCollider2D>()){
+            c.enabled = false;
+        }
+
         this.enabled = false;
     }
         

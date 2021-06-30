@@ -11,7 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask shurikenLayers; //Ergänzung für Shuriken - Melli
     AudioSource attack;
 
-    public int attackDamage = 50;
+    public int attackDamage = 60;
     void Update()
     {
          if(Input.GetKeyDown(KeyCode.RightShift))
@@ -23,10 +23,15 @@ public class PlayerCombat : MonoBehaviour
     
     void Attack()
      {
+       //Spiele Attack-Sound nicht, wenn Ninja am Springen ist
+       if(!animator.GetBool("IsJumping"))
+       {  
         SoundManager.PlaySound("attack");
+       }
 
         //Animation der Schwertattacke
         animator.SetTrigger("Attack");
+
 
         //Aufspüren der Feinde
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
