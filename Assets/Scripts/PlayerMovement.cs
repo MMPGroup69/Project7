@@ -25,9 +25,12 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if(Input.GetButtonDown("Jump")){
-            SoundManager.PlaySound("jump");
-            jump = true;
-            animator.SetBool("IsJumping", true);
+            if(!animator.GetBool("IsJumping"))
+            {  
+                SoundManager.PlaySound("jump");
+                jump = true;
+                animator.SetBool("IsJumping", true);
+            }
         }
 
         if(Input.GetButtonDown("Crouch")){
