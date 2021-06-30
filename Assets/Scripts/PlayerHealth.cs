@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public Animator animator; // für Verletzung - Aylin
     public static int lives = 5;
+    int currentLives;
     public bool isAlive = true;
     public int shurikenDmg = 1;
     public int enemyDmg = 2;
@@ -17,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         lives = 5;
+        currentLives = 5;
     }
 
     // Update is called once per frame
@@ -38,22 +40,34 @@ public class PlayerHealth : MonoBehaviour
         if (collision.tag == "Shuriken")
         {
             lives = lives - shurikenDmg;
-            SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab - Aylin 
+            SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab
             animator.SetTrigger("Hurt");    //Spiele Hurt Animation ab
         }
 
         // Enemy DMG
-        if (collision.tag == "Enemy")
-        {
-            lives = lives - enemyDmg;
-            SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab - Aylin 
-            animator.SetTrigger("Hurt");    //Spiele Hurt Animation ab
-        }
+        //if (collision.tag == "Enemy")
+        //{
+        //   lives = lives - enemyDmg;
+        //    SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab  
+        //    animator.SetTrigger("Hurt");    //Spiele Hurt Animation ab
+        //}
 
         // Falling DMG
         if (collision.tag == "Falling")
         {
             lives = lives - fallingDmg;
+        }
+    }
+
+    public void TakeDamage (int damage) {
+        currentLives -= damage;
+        lives = currentLives;
+        SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab
+        animator.SetTrigger("Hurt"); 
+        if (currentLives <= 0)
+        {
+            isAlive = false;
+            SceneManager.LoadScene("GAMEOVER");
         }
     }
 

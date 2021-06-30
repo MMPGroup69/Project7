@@ -6,7 +6,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
     public Transform attackPoint;
-    public float attackRange = 0.5f;
+    public float attackRange = 1.5f;
     public LayerMask enemyLayers;
     public LayerMask shurikenLayers; //Ergänzung für Shuriken - Melli
     AudioSource attack;
