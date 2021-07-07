@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour {
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
-    bool crouch = false;
     AudioSource step;
    
     void Start ()
@@ -32,25 +31,11 @@ public class PlayerMovement : MonoBehaviour {
                 animator.SetBool("IsJumping", true);
             }
         }
-
-        if(Input.GetButtonDown("Crouch")){
-            SoundManager.PlaySound("crouch");
-            crouch = true;
-        } else if (Input.GetButtonUp("Crouch")){
-            crouch = false;
-        }
-       
        
     }
 
     public void OnLanding(){
         animator.SetBool("IsJumping", false);
-    }
-     
-     public void OnCrouching(bool isCrouching){
-        animator.SetBool("IsCrouching", isCrouching);
-        
-
     }
 
     public void Step (){
@@ -59,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void FixedUpdate (){
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
         jump = false;
 
     }

@@ -250,9 +250,6 @@ AnimatorStateMachine:
     m_State: {fileID: 4147054001100507485}
     m_Position: {x: 90, y: 140, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 3113216580111804930}
-    m_Position: {x: 370, y: 150, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 3596363040538748835}
     m_Position: {x: 760, y: 120, z: 0}
   - serializedVersion: 1
@@ -381,31 +378,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsJumping
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: IsCrouching
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Hurt
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -461,7 +458,6 @@ AnimatorState:
   - {fileID: 1898465662204818350}
   - {fileID: -7815678837247018501}
   - {fileID: 1647503033420879664}
-  - {fileID: -2358622737548751077}
   - {fileID: 4625678853051958893}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
@@ -759,7 +755,6 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1662393852791689154}
-  - {fileID: -7064699745437340599}
   - {fileID: -8019290029830840107}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}

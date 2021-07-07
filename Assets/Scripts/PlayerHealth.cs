@@ -62,7 +62,6 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage (int damage) {
         currentLives -= damage;
         lives = currentLives;
-        SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab
         animator.SetTrigger("Hurt"); 
         if (currentLives <= 0)
         {

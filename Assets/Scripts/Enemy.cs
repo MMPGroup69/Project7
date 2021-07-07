@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] float moveSpeed = 1f;
 
-    public Transform attackPoint;
+    public Transform attackPoint_;
     public float attackRange = 0.5f;
     public float attackRate = 2f;
     float nextAttackTime = 0f;
@@ -31,13 +31,14 @@ public class Enemy : MonoBehaviour
     {   
         if (Time.time >= nextAttackTime)
         {
-            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayers);
+            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint_.position, attackRange, playerLayers);
 
             foreach(Collider2D player in hitPlayer)
             {
             Debug.Log("Enemy hit Player");
+            SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab
             player.GetComponent<PlayerHealth>().TakeDamage(2);
-            nextAttackTime = Time.time + 1f/ attackRange;
+            nextAttackTime = Time.time + 1f/ attackRate;
             }
 
         }
@@ -60,9 +61,9 @@ public class Enemy : MonoBehaviour
 
     void OnDrawGizmoSelected()
         {
-            if(attackPoint == null)
+            if(attackPoint_ == null)
                 return;
-            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+            Gizmos.DrawWireSphere(attackPoint_.position, attackRange);
         }
 
     private bool IsFacingRight(){
