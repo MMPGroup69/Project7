@@ -8,6 +8,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+      //delay for sfx
+      Invoke("NextScene", 0.3f);
+    }
+
+    // load next scene
+    private void NextScene()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

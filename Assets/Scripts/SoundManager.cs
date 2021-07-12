@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip jumpSound, crouchSound, attackSound, hurtSound, secretSound;
+    public static AudioClip jumpSound, crouchSound, attackSound, hurtSound,
+    secretSound, buttonSound;
+
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -14,11 +16,13 @@ public class SoundManager : MonoBehaviour
         attackSound = Resources.Load<AudioClip>("attack");
         hurtSound = Resources.Load<AudioClip>("hurt");
         secretSound = Resources.Load<AudioClip>("secret");
+        buttonSound = Resources.Load<AudioClip>("button");
+
         audioSrc = GetComponent<AudioSource>();
     }
 
 
-    
+
     public static void PlaySound (string clip)
     {
         switch (clip)
@@ -37,6 +41,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "secret":
                 audioSrc.PlayOneShot(secretSound);
+                break;
+            case "button":
+                audioSrc.PlayOneShot(buttonSound);
                 break;
 
         }

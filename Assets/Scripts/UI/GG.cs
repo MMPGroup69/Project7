@@ -13,7 +13,15 @@ public class GG : MonoBehaviour
         // loads MainMenu after key input (SPACE)
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("MainMenu");
+            SoundManager.PlaySound("button");
+            //delay for sfx
+            Invoke("NextScene", 0.3f);
         }
+    }
+
+    // load next scene
+    private void NextScene()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
