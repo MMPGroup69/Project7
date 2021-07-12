@@ -39,7 +39,7 @@ public class CharacterController2D : MonoBehaviour
 		bool wasGrounded = m_Grounded; // true-Wert wird gespeichert
 		m_Grounded = false;
 
-		// Spieler ist auf dem Boden, wenn ein Kreis um den Groundcheck mit etwas kollidiert, dass als Boden festgelegt ist (wird in Engine bei What Is Ground festgelegt)
+		// Spieler ist auf dem Boden, wenn ein Kreis um den Groundcheck mit etwas kollidiert, das als Boden festgelegt ist (wird in Engine bei What Is Ground festgelegt)
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround); //(m_GroundCheck.position ist Mittelpunkt des Kreises
 		for (int i = 0; i < colliders.Length; i++)
 		{
@@ -56,7 +56,7 @@ public class CharacterController2D : MonoBehaviour
 	public void Move(float move,  bool jump)
 	{
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);// Berechne Zielgeschwindigkeitsvektor des Players
-			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing); // gradueller �bergang zum Zielgeschwindigkeitsvektor
+			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing); // gradueller Übergang zum Zielgeschwindigkeitsvektor
 
 			// Wenn der Input eine Rechtsbewegung ist und der Player links gerichtet ist, spiegel den Sprite 
 			if (move > 0 && !m_FacingRight)
@@ -91,7 +91,6 @@ public class CharacterController2D : MonoBehaviour
 
 	public void FaceRight()
     {
-		//Wenn sich der boolsche Wert von m_FacingRight ändert, spiegel den Sprite
 		//Wenn sich der boolsche Wert von m_FacingRight ändert, spiegel den Sprite
         if (!m_FacingRight)
         {

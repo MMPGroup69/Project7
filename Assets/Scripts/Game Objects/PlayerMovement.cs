@@ -11,8 +11,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f; //Anfangsgeschwindigkeit = 0
     bool jump = false; // Um festzulegen, ob Player springt oder nicht
     AudioSource step;
-   
-    //Gibt die AudioSource-Komponente zurück, die im Player vorhanden ist
+
     void Start ()
     {
         step = GetComponent<AudioSource>();
@@ -26,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    // Updadte in jedem Frame, prüft hauptsächlich auf User-Inputs
+    // Update in jedem Frame, prüft hauptsächlich auf User-Inputs
     void Update() 
     {
         horizontalMove = Input.GetAxisRaw("Horizontal")*runSpeed; // Richtung * Geschwindigkeit (neg. Wert wenn Bewegung links, pos.Wert, wenn Bewegung rechts)
@@ -44,13 +43,14 @@ public class PlayerMovement : MonoBehaviour
        
     }
 
-  // Update der Bewegung wird eine festen Anzahl pro Sekunde aufgerufen,
+  // Update der Bewegung wird eine feste Anzahl pro Sekunde aufgerufen
   void FixedUpdate () 
     {  
         // Move() aus CharacterController2D wird ausgeführt mit Input jump aus dieser Klasse und horizontalMove * Time.fixedDeltaTime
         controller.Move(horizontalMove * Time.fixedDeltaTime, jump); //fixedDeltaTime ist die vergangene Zeit seit dem letzten Funktionsaufruf (horizontalMove * Time.fixedDeltaTime geht sicher, dass die Playergeschwindigkeit konsistent bleibt)
         jump = false;
 
+        //Fall-Animation
         if(rb.velocity.y < -6.6f)
         {
             animator.SetBool("IsFalling", true);
