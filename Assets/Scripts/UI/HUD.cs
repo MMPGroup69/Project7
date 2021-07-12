@@ -9,11 +9,12 @@ using UnityEngine.SceneManagement;
 public class HUD : MonoBehaviour
 
 {
+    // door for tresure room
+    public GameObject door;
 
-    public GameObject door; // Tuer zur Schatzkammer, welche sich mit dem dritten Schluessel oeffnet.
     float currentTime = 0f;
     float startingTime = 300f;
-    public static int currentLives = 0;
+    public static int currentLives;
 
     public static int currentCoins = 0;
     public int startingCoins = 0;
@@ -38,10 +39,17 @@ public class HUD : MonoBehaviour
 
     void Update()
     {
+        // current HP
         lifeText.text = PlayerHealth.lives.ToString();
+
+        // coin counter
         coinText.text = currentCoins.ToString();
+
+        // key counter
         keyText.text = currentKeys.ToString();
-        currentTime -= 1 * Time.deltaTime; // Timer zaehlt runter
+
+        //countdown for timer
+        currentTime -= 1 * Time.deltaTime;
         countdownText.text = currentTime.ToString("0");
 
         if (currentTime <= 0)
@@ -50,26 +58,20 @@ public class HUD : MonoBehaviour
             //load GAME OVER scene
             SceneManager.LoadScene(3);
         }
-        
-        //Habe das rausgenommen weil sonst die GameOver Scene doppelt geladen wird nach dem builden; wenn ich es aus health rausnehme funktioniert es nicht mehr
-        //else if (currentLives <= 0) {
-            //load GAME OVER scene
-            //SceneManager.LoadScene(3);
-        //}
 
-        // Je 10 coins werden gegen 1 Health-point eingetauscht
+        // adds 1 HP for every 10th coin
         else if (currentCoins >= 10)
         {
             currentCoins = 0;
             PlayerHealth.lives += 1;
         }
 
-        // Der dritte Schluessel ist gefunden
+        // unlocks treasure room after key#3
         else if (currentKeys >= 3) {
             if (isLocked == true){
                 SoundManager.PlaySound("secret");
                 isLocked = false;
-                Destroy(door); // Nun ist der Durchgang fuer Ninja zur Kammer frei.
+                Destroy(door);
             }
         }
     }
