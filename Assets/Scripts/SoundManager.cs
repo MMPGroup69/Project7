@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip jumpSound, crouchSound, attackSound, hurtSound, secretSound;
+    public static AudioClip jumpSound, attackSound, hurtSound, secretSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start(){
         jumpSound = Resources.Load<AudioClip>("jump");
-        crouchSound = Resources.Load<AudioClip>("crouch");
         attackSound = Resources.Load<AudioClip>("attack");
         hurtSound = Resources.Load<AudioClip>("hurt");
         secretSound = Resources.Load<AudioClip>("secret");
@@ -25,9 +24,6 @@ public class SoundManager : MonoBehaviour
         {
             case "jump":
                 audioSrc.PlayOneShot(jumpSound);
-                break;
-            case "crouch":
-                audioSrc.PlayOneShot(crouchSound);
                 break;
             case "attack":
                 audioSrc.PlayOneShot(attackSound);
