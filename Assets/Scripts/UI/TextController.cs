@@ -17,11 +17,6 @@ public class TextController : MonoBehaviour
         StartCoroutine(WriteText());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     IEnumerator WriteText()
     {
@@ -31,11 +26,6 @@ public class TextController : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
 
-        //foreach(char character in controls.ToCharArray())
-        //{
-        //    controltext.text += character;
-        //    yield return new WaitForSeconds(textSpeed);
-        //}
     }
 
 }
