@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Klasse 
 public class Ending : MonoBehaviour
 {
     void Update()

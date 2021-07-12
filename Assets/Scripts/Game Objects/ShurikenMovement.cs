@@ -6,9 +6,9 @@ public class ShurikenMovement : MonoBehaviour
 {
     public float speed = 3f;
     public Rigidbody2D rb;
-    public bool destroyed = false;  //wenn das Objekt vom Spieler zerstört wird, auf true setzen und Destroy(gameObject)
+    public bool destroyed = false;  //wenn das Objekt vom Spieler zerstoert wird, auf true setzen und Destroy(gameObject)
     
-    //um den Abstand nach dem die Objekte standardmäßig zerstört werden zu berechnen
+    //um den Abstand nach dem die Objekte standardmaesig zerstoert werden zu berechnen
     private float startTime;
     private float currentTime;
     
@@ -16,8 +16,8 @@ public class ShurikenMovement : MonoBehaviour
     void Start()
     {
         startTime = Time.time;
-        //die erzeugten Shuriken sollen sich mit gewünschter Geschwindigkeit Richtung Spieler (nach links) bewegen:
-            rb.velocity = transform.right * speed;
+        //die erzeugten Shuriken sollen sich mit gewuenschter Geschwindigkeit Richtung Spieler (nach links) bewegen:
+            rb.velocity = transform.right * speed; // bitte noch kommentieren, warum transform.right ? Shuriken fliegt ja nach links
             transform.eulerAngles = Vector3.right * 1; //damits richtig rum rotiert
     }
 
@@ -26,8 +26,8 @@ public class ShurikenMovement : MonoBehaviour
     void Update()
     {
         currentTime = Time.time;
-        //wenn der Spieler ein Shuriken trifft, wird es zerstört
-        //nach einer gewissen Zeit oder einer gewissen Distanz sollen die Objekte standardmäßig zerstört werden
+        //wenn der Spieler ein Shuriken trifft, wird es zerstoert
+        //nach einer gewissen Zeit oder einer gewissen Distanz sollen die Objekte standardmaesig zerstoert werden
         if (currentTime - startTime >= 3.3 || destroyed == true)
         {
             Destroy(gameObject);
@@ -38,7 +38,7 @@ public class ShurikenMovement : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            Destroy(gameObject);    //bei Kollision soll das Objekt zerstört werden; Es muss noch überprüft werden dass es sich nicht um eine Münze oder Schlüssel handelt!!!
+            Destroy(gameObject);    //bei Kollision mit Spieler soll das Objekt zerstoert werden; 
         }
     }
 

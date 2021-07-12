@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Klasse sorgt f?r das Spawnen der Shuriken
 public class FireShuriken : MonoBehaviour
 {
     //Variablen:
-    public Transform firePoint1;
-    public Transform firePoint2;
-    public Transform firePoint3;
+    public Transform firePoint1; // moeglicher Spawn-Ort
+    public Transform firePoint2; // moeglicher Spawn-Ort
+    public Transform firePoint3; // moeglicher Spawn-Ort
     public GameObject shurikenPrefab;
     private System.Random random = new System.Random();
     private int cases = 0;
@@ -17,18 +18,12 @@ public class FireShuriken : MonoBehaviour
     private float nextShot;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         currentTime = Time.time;
 
-        if (currentTime - lastShot >= nextShot)    //wenn der gewünschte Abstand zum letzten Feuern erreicht ist, soll erneut gefeuert werden
+        if (currentTime - lastShot >= nextShot)    //wenn der gewuenschte Abstand zum letzten Feuern erreicht ist, soll erneut gefeuert werden
         {
             lastShot = currentTime;
             cases = random.Next(1, 4);  //damit random von einem der drei Punkte gefeuert werden kann
@@ -46,7 +41,7 @@ public class FireShuriken : MonoBehaviour
                 default:
                     break;
             }
-            //legt den Abstand zum nächsten Feuern random fest
+            //legt den Abstand zum naechsten Feuern random fest
             nextShot = (random.Next(30, 60)) * 0.1f;
         }
 

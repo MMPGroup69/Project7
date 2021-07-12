@@ -7,17 +7,6 @@ public class Coin : MonoBehaviour
     public GameObject coinPrefab;
     bool isCollected = false;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     //wenn der Spieler die M�nzen einsammelt, verschwinden sie und der Counter erh�ht sich
     private void OnTriggerEnter2D(Collider2D collision)
