@@ -5,13 +5,15 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public Animator animator;
-    public Transform attackPoint;
+    public Transform attackPoint; //Punkt an der Attacke stattfindet
     public float attackRange = 1.5f;
-    public LayerMask enemyLayers;
+    public LayerMask enemyLayers; 
     public LayerMask shurikenLayers; //Ergänzung für Shuriken - Melli
     AudioSource attack;
 
     public int attackDamage = 60;
+
+    //Überprüfe jedes Frame, ob Shift-Taste gedrückt wird und führe dann Attacke aus
     void Update()
     {
          if(Input.GetKeyDown(KeyCode.RightShift))
@@ -29,8 +31,7 @@ public class PlayerCombat : MonoBehaviour
         SoundManager.PlaySound("attack");
        }
 
-        //Animation der Schwertattacke
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Attack"); //Animation der Schwertattacke
 
 
         //Aufspüren der Feinde
@@ -39,7 +40,8 @@ public class PlayerCombat : MonoBehaviour
         //Schaden am Feind anrichten
        foreach(Collider2D enemy in hitEnemies)
         {
-           enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+           //Greife auf die Methode des Feinds zu, die Schaden an ihm anrichtet, wenn hitEnemies mit dem Feind kollidiert
+           enemy.GetComponent<Enemy>().TakeDamage(attackDamage); 
         }
 
 
@@ -50,15 +52,14 @@ public class PlayerCombat : MonoBehaviour
         {
             shuriken.GetComponent<ShurikenMovement>().destroyed = true; //destroyed wird bei getroffenen Shuriken auf true gesetzt, Rest passiert in ShurikenMovement
         }
-
      }
 
      void OnDrawGizmosSelected()
-     {
-        if(attackPoint == null) 
-            return;
+        {
+            if(attackPoint == null)
+                return;
 
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-     }
-        
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        }
+
 }

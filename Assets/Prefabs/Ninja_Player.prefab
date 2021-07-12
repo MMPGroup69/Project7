@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 6069225684259841822}
   - component: {fileID: 6069225684259841817}
   - component: {fileID: 6069225684259841816}
-  - component: {fileID: 6069225684259841819}
-  - component: {fileID: 6069225684259841820}
   - component: {fileID: 6069225684259841823}
   - component: {fileID: 6069225684259841821}
   - component: {fileID: 6069225684259841810}
   - component: {fileID: 6069225684259841811}
   - component: {fileID: -5400016439821020279}
   - component: {fileID: -3083316383626872440}
+  - component: {fileID: 5584176762150950056}
   m_Layer: 7
   m_Name: Ninja_Player
   m_TagString: Player
@@ -114,48 +113,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6069225684259841819
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069225684259841818}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.03021418, y: 0.07444094}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.37}
-    newSize: {x: 1.28, y: 1.72}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.12502751, y: 0.22852445}
-  m_EdgeRadius: 0
---- !u!58 &6069225684259841820
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069225684259841818}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.031325053, y: -0.065}
-  serializedVersion: 2
-  m_Radius: 0.07148866
 --- !u!114 &6069225684259841823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,8 +233,24 @@ MonoBehaviour:
   animator: {fileID: 0}
   isAlive: 1
   shurikenDmg: 1
-  enemyDmg: 2
   fallingDmg: 2
+  enemyDmg: 2
+--- !u!70 &5584176762150950056
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069225684259841818}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04, y: 0.025}
+  m_Size: {x: 0.15, y: 0.32}
+  m_Direction: 0
 --- !u!1 &6069225684345636124
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2381845704065216160}
   - component: {fileID: 2381845704065216163}
   - component: {fileID: 2381845704065216162}
-  - component: {fileID: 2381845704065216166}
   - component: {fileID: 2381845704065216167}
   - component: {fileID: 2381845704065216173}
+  - component: {fileID: 1852473805103225493}
   m_Layer: 8
   m_Name: Enemy1
   m_TagString: Enemy
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -309121243
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: df91e1931f1851e469bfdc43e3261221, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -94,7 +94,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2381845704065216172}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -107,32 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &2381845704065216166
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2381845704065216172}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.01513958, y: -0.013782054}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.63, y: 0.58}
-    newSize: {x: 1.24, y: 0.77}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6152693, y: 0.40907782}
-  m_EdgeRadius: 0
 --- !u!95 &2381845704065216167
 Animator:
   serializedVersion: 3
@@ -164,5 +138,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa65875ecf15a2d4da83341b0fea8b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1
   animator: {fileID: 2381845704065216167}
   maxHealth: 100
+--- !u!70 &1852473805103225493
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381845704065216172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 36ee8146af61c90419019864d5b77206, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.001776453, y: -0.033778075}
+  m_Size: {x: 0.5944445, y: 0.49844795}
+  m_Direction: 1

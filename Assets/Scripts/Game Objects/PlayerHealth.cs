@@ -5,20 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public Animator animator; // für Verletzung - Aylin
+    public Animator animator; // für Verletzung
     public static int lives = 5;
-    int currentLives;
     public bool isAlive = true;
     public int shurikenDmg = 1;
-    public int enemyDmg = 2;
     public int fallingDmg = 2;
+    public int enemyDmg = 2;
 
 
     // Start is called before the first frame update
     void Start()
     {
         lives = 5;
-        currentLives = 5;
     }
 
     // Update is called once per frame
@@ -43,30 +41,23 @@ public class PlayerHealth : MonoBehaviour
             SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab
             animator.SetTrigger("Hurt");    //Spiele Hurt Animation ab
         }
-
-        // Enemy DMG
-        //if (collision.tag == "Enemy")
-        //{
-        //   lives = lives - enemyDmg;
-        //    SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab  
-        //    animator.SetTrigger("Hurt");    //Spiele Hurt Animation ab
-        //}
-
-        // Falling DMG
+        
+        //Falling DMG
         if (collision.tag == "Falling")
         {
             lives = lives - fallingDmg;
         }
+
     }
 
-    public void TakeDamage (int damage) {
-        currentLives -= damage;
-        lives = currentLives;
-        animator.SetTrigger("Hurt"); 
-        if (currentLives <= 0)
+
+    void OnCollisionEnter2D (Collision2D col) // Methode für die Kollisionserkennung mit dem Feind
+    {
+         if(col.gameObject.tag.Equals("Enemy"))
         {
-            isAlive = false;
-            SceneManager.LoadScene("GAMEOVER");
+            lives = lives - enemyDmg;
+            SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab
+            animator.SetTrigger("Hurt");  //Spiele Hurt Animation ab
         }
     }
 
