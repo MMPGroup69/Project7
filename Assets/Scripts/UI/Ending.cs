@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Klasse behandelt Forfuehrung nach Game-Over screen
+// class for GAMEOVER scene
 public class Ending : MonoBehaviour
 {
     void Update()
     {
+        // loads MainMenu after key input (SPACE)
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("MainMenu");
