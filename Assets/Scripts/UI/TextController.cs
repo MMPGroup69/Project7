@@ -5,11 +5,9 @@ using TMPro;
 
 public class TextController : MonoBehaviour
 {
-    public TextMeshProUGUI storytext;
-    //public TextMeshProUGUI controltext;
-    public string story;
-    //public string controls;
-    public float textSpeed;
+    public TextMeshProUGUI storytext; //uebergibt story canvas
+    public string story; //text der erscheinen soll
+    public float textSpeed; //geschwindigkeit
     
     // Start is called before the first frame update
     void Start()
@@ -20,6 +18,7 @@ public class TextController : MonoBehaviour
 
     IEnumerator WriteText()
     {
+        //fuegt jeden Buchstaben nach einer gewissen Zeit an, so dass der Text Stueck fuer Stueck auftaucht
         foreach(char character in story.ToCharArray())
         {
             storytext.text += character;

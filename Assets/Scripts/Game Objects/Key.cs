@@ -19,7 +19,7 @@ public class Key : MonoBehaviour
         
     }
 
-    //wenn der Spieler den Key "einsammelt" verschwindet er; Es muss überprüft werden dass es sich bei der Kollision um den Spieler handelt!!
+    //wenn der Spieler den Key "einsammelt" verschwindet er; Es muss überprüft werden dass es sich bei der Kollision um den Spieler handelt!
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" && isCollected == false)

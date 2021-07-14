@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
     bool isCollected = false;
     
 
-    //wenn der Spieler die M�nzen einsammelt, verschwinden sie und der Counter erh�ht sich
+    //wenn der Spieler die Muenzen einsammelt, verschwinden sie und der Counter erhoeht sich
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" && isCollected == false)

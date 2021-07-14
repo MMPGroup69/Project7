@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
         // Shuriken DMG 
         if (collision.tag == "Shuriken")
         {
-            lives = lives - shurikenDmg;
+            lives = lives - shurikenDmg; //reduziere Leben
             SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab
             animator.SetTrigger("Hurt");    //Spiele Hurt Animation ab
         }
@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
         //Falling DMG
         if (collision.tag == "Falling")
         {
-            lives = lives - fallingDmg;
+            lives = lives - fallingDmg; //reduziere Leben
         }
 
     }
@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
     {
          if(col.gameObject.tag.Equals("Enemy"))
         {
-            lives = lives - enemyDmg;
+            lives = lives - enemyDmg; //reduziere Leben
             SoundManager.PlaySound("hurt"); // Spiele Sound bei Verletzung ab
             animator.SetTrigger("Hurt");  //Spiele Hurt Animation ab
         }

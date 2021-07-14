@@ -713,8 +713,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 151.35007}
-  m_SizeDelta: {x: 1280, y: 550.63}
+  m_AnchoredPosition: {x: 0, y: 172.35}
+  m_SizeDelta: {x: 1280, y: 592.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338723089
 MonoBehaviour:
@@ -764,8 +764,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -984,12 +984,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storytext: {fileID: 1338723089}
-  story: "You are Hattori Genji, one of the last survivors of the Iga clan.\t\t\tAfter
+  story: "You are Hattori Genji, one of the last survivors of the Iga clan.\tAfter
     Nobunaga killed your people, he is now seeking the long-lost purple gems to gain
-    access to the throne and rule the country.\tBut you will not allow this to happen.\t\t\tTherefore,
-    you set out yourself - to take revenge by finding the treasure first.\t\tCollect
-    all three keys to reach your goal.\t\t\tBut beware - you will encounter many
-    foes along the way.\t\t\tGood Luck!"
+    access to the throne and rule the country.\tBut you will not allow this to happen.\tTherefore,
+    you set out yourself - to take revenge by finding the treasure first.\tCollect
+    all three keys to reach your goal.\tBut beware - you will encounter many foes
+    along the way.\t\tGood Luck!"
   textSpeed: 0.04
 --- !u!4 &2039295304
 Transform:

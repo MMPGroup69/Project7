@@ -8,7 +8,7 @@ public class ShurikenMovement : MonoBehaviour
     public Rigidbody2D rb;
     public bool destroyed = false;  //wenn das Objekt vom Spieler zerstoert wird, auf true setzen und Destroy(gameObject)
     
-    //um den Abstand nach dem die Objekte standardmaesig zerstoert werden zu berechnen
+    //um den Abstand nach dem die Objekte standardmaessig zerstoert werden zu berechnen
     private float startTime;
     private float currentTime;
     
@@ -17,7 +17,7 @@ public class ShurikenMovement : MonoBehaviour
     {
         startTime = Time.time;
         //die erzeugten Shuriken sollen sich mit gewuenschter Geschwindigkeit Richtung Spieler (nach links) bewegen:
-            rb.velocity = transform.right * speed; // bitte noch kommentieren, warum transform.right ? Shuriken fliegt ja nach links
+            rb.velocity = transform.right * speed; // transform.right weil der Punkt um 180° gedreht ist, Shuriken fliegt im Spiel folglich nach links
             transform.eulerAngles = Vector3.right * 1; //damits richtig rum rotiert
     }
 
@@ -27,7 +27,7 @@ public class ShurikenMovement : MonoBehaviour
     {
         currentTime = Time.time;
         //wenn der Spieler ein Shuriken trifft, wird es zerstoert
-        //nach einer gewissen Zeit oder einer gewissen Distanz sollen die Objekte standardmaesig zerstoert werden
+        //nach einer gewissen Zeit (oder einer gewissen Distanz) sollen die Objekte standardmaesig zerstoert werden
         if (currentTime - startTime >= 3.3 || destroyed == true)
         {
             Destroy(gameObject);
